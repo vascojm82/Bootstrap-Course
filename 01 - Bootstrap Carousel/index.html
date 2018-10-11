@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+      .content {
+        position: absolute;
+        left: 50%;
+        //top: 50%;
+        -webkit-transform: translate(-50%, 25%);
+        transform: translate(-50%, 25%);
+      }
+
+      .carousel-width div > img, .modal-width{
+        width: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Open Carousel </h1>
+      <!-- Large modal -->
+      <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content modal-width content">
+            <div id="carousel1" class="carousel slide carousel-width" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="0"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+                <li data-target="#carousel1" data-slide-to="4"></li>
+              </ol>
+
+              <div class="carousel-inner carousel-width">
+                <div class="item active">
+                  <img src="images/img2.jpg">
+                  <div class="carousel-caption">
+                    <h3>Image 1</h3>
+                    <p>Carousel Image # 1</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/img3.jpg">
+                  <div class="carousel-caption">
+                    <h3>Image 2</h3>
+                    <p>Carousel Image # 2</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/img4.jpg">
+                  <div class="carousel-caption">
+                    <h3>Image 3</h3>
+                    <p>Carousel Image # 3</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/img5.jpg">
+                  <div class="carousel-caption">
+                    <h3>Image 4</h3>
+                    <p>Carousel Image # 4</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/img3.jpg">
+                  <div class="carousel-caption">
+                    <h3>Image 5</h3>
+                    <p>Carousel Image # 5</p>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#carousel1" class="left carousel-control" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              </a>
+              <a href="#carousel1" class="right carousel-control" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
