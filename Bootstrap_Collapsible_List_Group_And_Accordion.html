@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+
+      <!--- *** COLLAPSIBLE PANEL LIST-GROUP *** --->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#cla5" data-toggle="collapse">Heading</a>
+            </h4>
+          </div>
+          <div id="cla5" class="panel-collapse collapse in">
+            <ul class="list-group">
+              <li class="list-group-item">Item #1</li>
+              <li class="list-group-item">Item #2</li>
+              <li class="list-group-item">Item #3</li>
+              <li class="list-group-item">Item #4</li>
+            </ul>
+            <div class="panel-footer">
+              Panel Footer
+            </div>
+          </div>
+        </div><br><br>
+        <!---*******************--->
+
+        <!--- *** COLLAPSIBLE ACCORDION *** --->
+        <div class="panel-group" id="accordion1">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a href="#cla6" data-toggle="collapse" data-parent="#accordion1">Collapsible Accordion</a>
+              </h4>
+            </div>
+            <div id="cla6" class="panel-collapse collapse in">
+              <div class="panel-body">
+                This is the accordion area
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a href="#cla7" data-toggle="collapse" data-parent="#accordion1">Collapsible Accordion</a>
+              </h4>
+            </div>
+            <div id="cla7" class="panel-collapse collapse">
+              <div class="panel-body">
+                This is the accordion area
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a href="#cla8" data-toggle="collapse" data-parent="#accordion1">Collapsible Accordion</a>
+              </h4>
+            </div>
+            <div id="cla8" class="panel-collapse collapse">
+              <div class="panel-body">
+                This is the accordion area
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--- ******************** --->
+      </div>
+    </div>
+  </body>
+</html>
