@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container-fluid{
+        padding: 0;
+      }
+
+      section{
+        width: 100vw;
+        height: 100vh;
+      }
+
+      h1{
+        padding: 40px;
+        margin: 0;
+      }
+
+      .navbar-nav{
+        float: none;
+      }
+
+      .navbar-fixed-left {
+        width: 17.2%;
+        position: fixed;
+        border-radius: 0;
+        height: 100%;
+      }
+
+      .navbar-fixed-left .navbar-nav > li {
+        position: relative;
+        float: none;  /* Cancel default */
+      }
+
+      .navbar-fixed-left .navbar-nav > li.active {
+        background-color: #e7e7e7;
+      }
+
+      .navbar-fixed-left .navbar-nav > li > a {
+        width: 100px;
+        margin: auto;
+      }
+
+      .navbar-fixed-left + .container {
+        padding-left: 160px;
+      }
+
+      /* On using dropdown menu (To right shift popuped) */
+      .navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+        margin-top: -50px;
+        margin-left: 140px;
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".navbar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <nav class="navbar navbar-default navbar-fixed-left">
+            <ul class="nav navbar-nav">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#software">Software</a></li>
+              <li><a href="#music">Music</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-10">
+          <section id="home" style="background: lightgreen;">
+            <h1>Home Section</h1>
+          </section>
+          <section id="software" style="background: lightblue;">
+            <h1>Software Section</h1>
+          </section>
+          <section id="music" style="background: orange;">
+            <h1>Music Section</h1>
+          </section>
+          <section id="contact" style="background: grey;">
+            <h1>Contact Section</h1>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
