@@ -9,29 +9,113 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
     <style>
-      .content {
-        position: absolute;
-        left: 50%;
-        //top: 50%;
-        -webkit-transform: translate(-50%, 25%);
-        transform: translate(-50%, 25%);
-      }
-
-      .carousel-width div > img, .modal-width{
-        width: 450px;
-      }
+		/* Image Gallery container*/
+		.img-gallery-container{
+			width: 80%;
+			margin: 40px auto;
+		}
+		/**************************/
+	
+		/* Tile Images */
+		.img-tile{
+			width: 20rem;
+			height: 20rem;
+			margin: 0 10px 10px 0;
+		}
+		
+		.img-tile:hover{
+			opacity: .5;
+		}
+		/**********************/
+		
+		/* Centering Modal */
+		.content {
+		  position: absolute;
+		  left: 50%;
+		  //top: 50%;
+		  -webkit-transform: translate(-50%, 30%);
+		  transform: translate(-50%, 30%);
+		}
+		/************************/
+		
+		/* overlay for better readibility of the caption  */
+		.overlay {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			opacity: 0.3;
+			transition: all 0.2s ease-out;
+		}
+		/************************/
+		
+		/ * Image Carousel */
+		.carousel-width div > img{
+		   width: 100%;
+		}
+		
+		.item{
+		   width: 45rem;
+		   height: 40rem;
+		}
+	  
+		.carousel{
+			border: 5px solid #FFF;
+		}
+		  
+		.carousel-control.right, .carousel-control.left {
+			background-image: none;
+		}
+		  
+		.carousel-fade .carousel-inner .item {
+			-webkit-transition-property: opacity;
+			transition-property: opacity;
+		}
+		.carousel-fade .carousel-inner .item,
+		.carousel-fade .carousel-inner .active.left,
+		.carousel-fade .carousel-inner .active.right {
+			opacity: 0;
+		}
+		.carousel-fade .carousel-inner .active,
+		.carousel-fade .carousel-inner .next.left,
+		.carousel-fade .carousel-inner .prev.right {
+			opacity: 1;
+		}
+		.carousel-fade .carousel-inner .next,
+		.carousel-fade .carousel-inner .prev,
+		.carousel-fade .carousel-inner .active.left,
+		.carousel-fade .carousel-inner .active.right {
+			left: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		.carousel-fade .carousel-control {
+			z-index: 2;
+		}  
+		/************************/
     </style>
   </head>
   <body>
     <div class="container">
-      <h1> Open Carousel </h1>
+      <h2> Image Gallery with Carousel on image click(Other Image gallery inside each)</h2>
       <!-- Large modal -->
-      <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <!--<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
+	  <div class="img-gallery-container">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
+		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+      </div>
+	  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content modal-width content">
-            <div id="carousel1" class="carousel slide carousel-width" data-ride="carousel">
+            <div id="carousel1" class="carousel slide carousel-width carousel-fade" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carousel1" data-slide-to="0" class="0"></li>
                 <li data-target="#carousel1" data-slide-to="1"></li>
@@ -41,36 +125,36 @@
               </ol>
 
               <div class="carousel-inner carousel-width">
-                <div class="item active">
-                  <img src="images/img2.jpg">
+                <div class="item active" style="background-image: url('images/img2.jpg');">
+				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 1</h3>
                     <p>Carousel Image # 1</p>
                   </div>
                 </div>
-                <div class="item">
-                  <img src="images/img3.jpg">
+                <div class="item" style="background-image: url('images/img3.jpg');">
+				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 2</h3>
                     <p>Carousel Image # 2</p>
                   </div>
                 </div>
-                <div class="item">
-                  <img src="images/img4.jpg">
+                <div class="item" style="background-image: url('images/img4.jpg');">
+				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 3</h3>
                     <p>Carousel Image # 3</p>
                   </div>
                 </div>
-                <div class="item">
-                  <img src="images/img5.jpg">
+                <div class="item" style="background-image: url('images/img5.jpg');">
+				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 4</h3>
                     <p>Carousel Image # 4</p>
                   </div>
                 </div>
-                <div class="item">
-                  <img src="images/img3.jpg">
+                <div class="item" style="background-image: url('images/img3.jpg');">
+				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 5</h3>
                     <p>Carousel Image # 5</p>
