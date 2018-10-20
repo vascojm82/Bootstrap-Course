@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
@@ -15,16 +16,35 @@
 			margin: 40px auto;
 		}
 		/**************************/
-	
+		
 		/* Tile Images */
-		.img-tile{
+		.img-container, .img-tile{
 			width: 20rem;
 			height: 20rem;
-			margin: 0 10px 10px 0;
+		}
+	
+		.img-container{
+			display: inline-block;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+	
+		.img-tile{
+			padding: 4px;
 		}
 		
 		.img-tile:hover{
 			opacity: .5;
+		}
+		
+		.close, .close:hover{
+			position: absolute;
+			top: 3%;
+			left: 90%;
+			z-index: 5;
+			display: inline-block;
+			color: #fff;
+			font-size: 4rem;
 		}
 		/**********************/
 		
@@ -91,9 +111,21 @@
 		}
 		.carousel-fade .carousel-control {
 			z-index: 2;
-		}  
+			height: 20px !important;
+			top: 50% !important;
+		}
 		/************************/
     </style>
+	<script>
+		$( document ).ready(function() {
+			let modal = $('.modal'); 
+			let closeBtn = $('button.close-btn');
+			
+			closeBtn.click(function(){
+				modal.modal('toggle');	
+			})
+		});
+	</script>
   </head>
   <body>
     <div class="container">
@@ -101,16 +133,30 @@
       <!-- Large modal -->
       <!--<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
 	  <div class="img-gallery-container">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
-		<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img2.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img3.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img4.jpg">
+		</div>
+		<div class="img-container">
+			<img class="img-tile" data-toggle="modal" data-target=".bs-example-modal-lg" src="images/img5.jpg">
+		</div>
       </div>
 	  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -126,6 +172,7 @@
 
               <div class="carousel-inner carousel-width">
                 <div id="item1" class="item active" style="background-image: url('images/img2.jpg');">
+				  <button type="button" class="close close-btn">&times;</button>
 				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 1</h3>
@@ -133,6 +180,7 @@
                   </div>
                 </div>
                 <div id="item2" class="item" style="background-image: url('images/img3.jpg');">
+				  <button type="button" class="close close-btn">&times;</button>
 				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 2</h3>
@@ -140,6 +188,7 @@
                   </div>
                 </div>
                 <div id="item3" class="item" style="background-image: url('images/img4.jpg');">
+				  <button type="button" class="close close-btn">&times;</button>
 				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 3</h3>
@@ -147,6 +196,7 @@
                   </div>
                 </div>
                 <div id="item4" class="item" style="background-image: url('images/img5.jpg');">
+				  <button type="button" class="close close-btn">&times;</button>
 				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 4</h3>
@@ -154,6 +204,7 @@
                   </div>
                 </div>
                 <div id="item5" class="item" style="background-image: url('images/img3.jpg');">
+				  <button type="button" class="close close-btn">&times;</button>
 				  <div class="overlay"></div>
                   <div class="carousel-caption">
                     <h3>Image 5</h3>
